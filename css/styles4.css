@@ -1,0 +1,65 @@
+
+
+body{
+    background-color: black;
+    align-content: center;
+    
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.flex-container .agrupado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 100px;
+    color: blue;
+
+}
+
+
+.flex-container .estrella{
+    padding-inline-start: auto;
+    display: flex;
+    align-items: center;
+}
+
+.grupo{
+    padding-top: 300px;
+    padding-left: 420px;
+    padding-right: 420px;
+    padding-bottom: 300px;
+}
+
+
+.changecolor{
+   color:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

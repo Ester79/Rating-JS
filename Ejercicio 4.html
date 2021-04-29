@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 copia</title>
+
+    <!--Link file styles CSS-->
+    <link rel="stylesheet" href="css/styles4.css">
+
+    <!--Link to web 'ionicons'-->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="Jquery/jquery-1.6.3.min.js"></script>
+
+
+<body>
+    <div class="flex-container grupo" id="fuera"> 
+        <div class="flex-container agrupado" type="button" >
+            <div id="estrella1" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
+            <div id="estrella2" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
+            <div id="estrella3" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
+            <div id="estrella4" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
+            <div id="estrella5" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
+        </div>
+    </div>
+
+
+
+
+<!--****************************************************CODIGO*******************************************************-->
+
+<script>
+    $(document).ready(function () { //Inicio función Ready
+
+
+
+var estrellaseleccionada = "ninguna";
+
+
+//DESACTIVAR CAMBIO COLOR AL HACER MOUSEOUT
+
+function desactivaEstrellasInferiores() { //funcion para desactivar al hacer mouseout
+    if (estrellaseleccionada == "ninguna") { //caso de no haber ninguna clickada  
+       $("#estrella1").removeClass("changecolor"); //desactivar la estrella y las inferiores 
+    }
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ) { //caso de no haber ninguna clickada  
+       $("#estrella2").removeClass("changecolor"); //desactivar la estrella y las inferiores 
+    }
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ||  estrellaseleccionada == "star2") { //caso de no haber ninguna clickada  
+       $("#estrella3").removeClass("changecolor"); //desactivar la estrella y las inferiores 
+    }
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3") { //caso de no haber ninguna clickada  
+       $("#estrella4").removeClass("changecolor"); //desactivar la estrella y las inferiores 
+    }
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3" || estrellaseleccionada == "star4") { //caso de no haber ninguna clickada  
+       $("#estrella5").removeClass("changecolor"); //desactivar la estrella y las inferiores 
+    }
+}
+
+
+
+
+//ACCION AL HACER CLICK EN CADA ESTRELLA
+
+$("#estrella1").click(function(){
+    estrellaseleccionada == "star1";
+})
+$("#estrella2").click(function(){
+    estrellaseleccionada == "star2";
+})
+$("#estrella3").click(function(){
+    estrellaseleccionada == "star3";
+})
+$("#estrella4").click(function(){
+    estrellaseleccionada == "star4";
+})
+$("#estrella5").click(function(){
+    estrellaseleccionada == "star5";
+})
+
+
+
+
+
+//METODOS POR ESTRELLA
+
+//Estrella 1
+$("#estrella1").mouseover(function () {
+    $("#estrella1").addClass("changecolor"); 
+});
+
+$("#estrella1").mouseout(function () {
+   desactivaEstrellasInferiores();
+});
+
+$("#estrella1").click(function () {
+    $("#estrella1").addClass("changecolor"); //se activa la estrella 1 al hacer click en ella
+    estrellaseleccionada = "star1"; //la variable estrella seleccionada pasa a ser 'star1'
+    $("#estrella2, #estrella3, #estrella4, #estrella5").removeClass("changecolor"); //desactivar las estrellas superiores a la 'star1' 
+});
+
+
+//Estrella 2
+
+$("#estrella2").mouseover(function () {
+    $("#estrella2, #estrella1").addClass("changecolor");
+});
+
+$("#estrella2").mouseout(function () {
+    desactivaEstrellasInferiores();
+});
+
+$("#estrella2").click(function () {
+   
+    $("#estrella1, #estrella2").addClass("changecolor");
+    estrellaseleccionada = "star2";
+    $("#estrella3, #estrella4, #estrella5").removeClass("changecolor");   
+});
+
+
+//Estrella 3
+
+$("#estrella3").mouseover(function () {
+    $("#estrella3, #estrella2, #estrella1").addClass("changecolor"); 
+});
+
+
+$("#estrella3").mouseout(function () {
+    desactivaEstrellasInferiores();
+});
+
+$("#estrella3").click(function () {
+    $("#estrella3, #estrella2, #estrella1").addClass("changecolor");
+    estrellaseleccionada = "star3";
+    $("#estrella4, #estrella5").removeClass("changecolor");   
+});
+
+
+
+//Estrella 4
+$("#estrella4").mouseover(function () {
+    $("#estrella4, #estrella3, #estrella2, #estrella1").addClass("changecolor");
+});
+
+$("#estrella4").mouseout(function () {
+    desactivaEstrellasInferiores();
+});
+
+$("#estrella4").click(function () {
+    $("#estrella4, #estrella3, #estrella2, #estrella1").addClass("changecolor");
+    estrellaseleccionada = "star4";
+    $("#estrella5").removeClass("changecolor");  
+});
+
+
+//Estrella 5
+$("#estrella5").mouseover(function () {
+    $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").addClass("changecolor");
+});
+
+$("#estrella5").mouseout(function () {
+    desactivaEstrellasInferiores();
+});
+
+$("#estrella5").click(function () {
+    $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").addClass("changecolor");
+    estrellaseleccionada = "star5";
+});
+
+}); //Fin función Ready
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+
+
+body{
+    background-color: black;
+    align-content: center;
+    padding-top: 300px;
+    padding-left: 420px;
+    padding-right: 420px;
+    padding-bottom: 300px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 100px;
+   
+}
+
+
+.flex-container .estrella{
+    padding-inline-start: auto;
+    display: flex;
+    align-items: center;
+}
+
+.grupo{
+    color: blue;
+    
+}
+
+
+.changecolor{
+   color:yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
