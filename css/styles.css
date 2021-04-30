@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: black;
+    background-color: lightgoldenrodyellow;
     align-content: center;
     padding-top: 300px;
     padding-left: 420px;
@@ -30,13 +30,13 @@ body{
 }
 
 .grupo{
-    color: blue;
+    color: cadetblue;
     
 }
 
 
 .changecolor{
-   color:yellow;
+   color:orange;
 }
 
 

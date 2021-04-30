@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: black;
+    background-color: lightgoldenrodyellow;
     align-content: center;
     
     display: flex;
@@ -16,7 +16,7 @@ body{
     align-items: center;
     width: 100%;
     font-size: 100px;
-    color: blue;
+    color: cadetblue;
 
 }
 
@@ -36,7 +36,7 @@ body{
 
 
 .changecolor{
-   color:red;
+   color:orange;
 }
 
 
