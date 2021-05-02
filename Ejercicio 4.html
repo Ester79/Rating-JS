@@ -15,7 +15,7 @@
 
 <body>
     <div class="flex-container grupo" id="fuera"> 
-        <div class="flex-container agrupado" type="button" >
+        <div class="flex-container agrupado" id="dentro" >
             <div id="estrella1" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
             <div id="estrella2" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
             <div id="estrella3" type="button"><ion-icon class="estrella" name="star-outline"></ion-icon></div>
@@ -32,8 +32,6 @@
 <script>
     $(document).ready(function () { //Inicio función Ready
 
-
-
 var estrellaseleccionada = "ninguna";
 
 
@@ -43,16 +41,16 @@ function desactivaEstrellasInferiores() { //funcion para desactivar al hacer mou
     if (estrellaseleccionada == "ninguna") { //caso de no haber ninguna clickada  
        $("#estrella1").removeClass("changecolor"); //desactivar la estrella y las inferiores 
     }
-    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ) { //caso de no haber ninguna clickada  
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ) {  
        $("#estrella2").removeClass("changecolor"); //desactivar la estrella y las inferiores 
     }
-    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ||  estrellaseleccionada == "star2") { //caso de no haber ninguna clickada  
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" ||  estrellaseleccionada == "star2") {  
        $("#estrella3").removeClass("changecolor"); //desactivar la estrella y las inferiores 
     }
-    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3") { //caso de no haber ninguna clickada  
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3") {  
        $("#estrella4").removeClass("changecolor"); //desactivar la estrella y las inferiores 
     }
-    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3" || estrellaseleccionada == "star4") { //caso de no haber ninguna clickada  
+    if (estrellaseleccionada == "ninguna"|| estrellaseleccionada == "star1" || estrellaseleccionada == "star2"  || estrellaseleccionada == "star3" || estrellaseleccionada == "star4") {   
        $("#estrella5").removeClass("changecolor"); //desactivar la estrella y las inferiores 
     }
 }
@@ -166,6 +164,23 @@ $("#estrella5").click(function () {
     $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").addClass("changecolor");
     estrellaseleccionada = "star5";
 });
+
+
+// DESELECCIONAR TODAS LAS ESTRELLAS AL HACER CLICK FUERA DE LA ZONA
+
+$(window).click(limpiar); //llamar a la función limpiar al hacer click en la ventana
+
+function limpiar(e) {
+  //capturo cualquier click en cualquier sitio "e" es el nombre argument
+  if (!document.getElementById("dentro").contains(e.target)) {
+      estrellaseleccionada = "ninguna"; 
+      $("#estrella1").removeClass("changecolor"); //eliminar la clase en cada estrella
+      $("#estrella2").removeClass("changecolor");
+      $("#estrella3").removeClass("changecolor");
+      $("#estrella4").removeClass("changecolor");
+      $("#estrella5").removeClass("changecolor");
+  }
+}
 
 }); //Fin función Ready
 

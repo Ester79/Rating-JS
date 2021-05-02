@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     align-content: center;
     padding-top: 300px;
     padding-left: 420px;
@@ -27,16 +27,18 @@ body{
     padding-inline-start: auto;
     display: flex;
     align-items: center;
+   
 }
 
 .grupo{
-    color: cadetblue;
+    color: lightblue;
+    
     
 }
 
 
 .changecolor{
-   color:orange;
+   color:darkblue;
 }
 
 
